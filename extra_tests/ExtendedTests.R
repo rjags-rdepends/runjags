@@ -1,6 +1,6 @@
 # source("C:/Users/Administrator/Desktop/runjags-tests/ExtendedTests.R")
 
-on.exit(system('rm -r /Users/matthewdenwood/Documents/Code/R/myrpackages/support/runjags-tests/testarea/*'))
+on.exit(system('rm -r ~/Documents/Code/R/myrpackages/support/runjags-tests/testarea/*'))
 
 require('lme4')
 require('parallel')
@@ -25,9 +25,9 @@ if(windows){
   dostandardchecks <- TRUE
   makeForkCluster <- parallel::makeCluster
 }else{
-  testarea <- '/Users/matthewdenwood/Documents/Code/R/myrpackages/support/runjags-tests/testarea'
-  testfolder <- '/Users/matthewdenwood/Documents/GitHub/runjags/tests'
-  examplearea <- '/Users/matthewdenwood/Documents/GitHub/runjags'
+  testarea <- '~/Documents/Code/R/myrpackages/support/runjags-tests/testarea'
+  testfolder <- '~/Documents/GitHub/runjags/tests'
+  examplearea <- '~/Documents/GitHub/runjags'
   dostandardchecks <- FALSE
 }
 
@@ -61,7 +61,7 @@ fbb <- function(...){
 if(FALSE){
   options(warn=0)  # makes warnings non-fatal
 
-  s <- try(devtools::install('/Users/matthewdenwood/Documents/Code/R/myrpackages/runjags'))
+  s <- try(devtools::install('~/Documents/Code/R/myrpackages/runjags'))
   if(inherits(s, 'try-error'))
     stop(paste('Install failed: ', s, sep='\n'))
 

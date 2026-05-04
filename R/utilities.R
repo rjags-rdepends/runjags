@@ -514,6 +514,7 @@ testjags <- function(jags=runjags.getOption('jagspath'), silent=FALSE){
 			if(grepl('(', versioncom, fixed=TRUE)){
 				versioncom <- strsplit(versioncom, split='(', fixed=TRUE)[[1]][1]
 			}
+			versioncom <- sub("-beta$", "", versioncom)
 			versioncom <- sub('.',';',versioncom,fixed=TRUE)
 			versioncom <- gsub('.','',versioncom,fixed=TRUE)
 			num.version <- as.numeric(gsub(';','.',versioncom,fixed=TRUE))
